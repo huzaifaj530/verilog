@@ -3,9 +3,9 @@
 // Company: 
 // Engineer: 
 // 
-// Create Date:    15:09:55 02/20/2023 
+// Create Date:    15:49:36 02/20/2023 
 // Design Name: 
-// Module Name:    JK_FF 
+// Module Name:    D_FF 
 // Project Name: 
 // Target Devices: 
 // Tool versions: 
@@ -18,20 +18,12 @@
 // Additional Comments: 
 //
 //////////////////////////////////////////////////////////////////////////////////
-module JK_FF(j,k,q,qbar,clk);
-input clk,j,k;
-output reg q = 0 ,qbar =1;
-
+module D_FF(q,d,clk);
+input d,clk;
+output reg q = 0;
 always@(posedge clk)
-	begin
-		case({j,k})
-		2'b00: q=q;
-		2'b01: q=1'b0;
-		2'b10: q=1'b1;
-		2'b11: q=~q;
-		endcase
-	qbar=~q;
+begin 
+q=d;
 end
-
 
 endmodule
