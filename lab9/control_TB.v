@@ -56,12 +56,10 @@ always#5clk=~clk;
 		// Initialize Inputs
 		
 		clk = 0;#10;
-		
-		opcode= 7'b0110011;#15;
-		
-		$display(" Time alu_src,branch,mem_read,mem_to_reg,reg_write,mem_write,alu_op0,alu_op1");
-		$monitor("%2d       %b         %b         %b         %b          %b         %b           %b         %b   ",$time,
+		$display(" Time		alu_src		branch		mem_read		mem_to_reg		reg_write		mem_write		alu_op0		alu_op1");
+		$monitor("%2d		%b		%b		%b		%b		%b		%b		%b		%b		",$time,
 		alu_src,branch,mem_read,mem_to_reg,reg_write,mem_write,alu_op0,alu_op1);
+		opcode= 7'b0110011;#15;
 		opcode= 7'b0000111;#15;
 		opcode= 7'b0000011;#15;
 		opcode= 7'b1100011;#15;
